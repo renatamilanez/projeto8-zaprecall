@@ -1,10 +1,11 @@
-import ClosedCards from "./ClosedCards";
+import React from "react";
 import Footer from "./Footer";
+import ListCards from "./ListCards";
 
 export default function FirstPage(){
     return (
         <div>
-            <ClosedCards />
+            <ListCards />
             <Footer />
         </div>
     )

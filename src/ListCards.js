@@ -2,35 +2,75 @@ import React from "react";
 
 const deck = [
     {
-        title: 'Pergunta 1',
         question: 'O que é JSX?',
         answer: 'Uma extensão da linguagem do JavaScript'
     },
     {
-        title: 'Pergunta 2',
         question: 'O React é...',
         answer: 'uma biblioteca de linguagem do JavaScript'
     },
     {
-        title: 'Pergunta 3',
         question: 'Componentes devem iniciar com...',
         answer: 'letra maiúscula'
     },
     {
-        title: 'Pergunta 4',
         question: 'O ReactDOM nos ajuda...',
         answer: 'interagindo com a DOM para colocar componentes React na mesma'
     },
+    {
+        question: 'Podemos colocar...',
+        answer: 'expressões'
+    },
+    {
+        question: 'Usamos o npm para...',
+        answer: 'gerenciar os pacotes necessários e suas dependências'
+    },
+    {
+        question: 'Usamos props para...',
+        answer: 'passar diferentes informações para componentes'
+    },
+    {
+        question: 'Usamos estado (state) para...',
+        answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'
+    },
 ];
 
-const renderQuestions = deck.map((question) => {
+let questions = [...deck];
+function suffledDeck(){
+    questions.sort(() => Math.random() - 0.5)
+    for(let i=0; i < questions.length; i++){
+        questions.pop()
+    }
+}
+suffledDeck();
+
+console.log(questions); 
+
+const renderQuestions = questions.map((question, index) => {
     return (
         <div className='closed-question'>
-                    <p className='title-question'>{question.title}</p>
+                    <p className='title-question'>Pergunta {index+1}</p>
                     <ion-icon name="play-outline"></ion-icon>
         </div>
     )
 });
+
+
+export default function ListCards(){
+    return (
+        <div className='main'>
+            <div className='logo'>
+                <div>
+                    <img src='./assets/images/image 2.png' alt=""/>
+                </div>
+                <h1>ZapRecall</h1>
+            </div>
+            <div className='questions'>
+                {renderQuestions}
+            </div>
+        </div>
+    )
+}; 
 
 //const [reply, setReply] = React.useState('play-outline');
 
@@ -59,19 +99,3 @@ const renderQuestions = deck.map((question) => {
                         <button className="positive">Zap!</button>
                     </div>
                 </div>*/
-
-export default function ClosedCards(){
-    return (
-        <div className='main'>
-            <div className='logo'>
-                <div>
-                    <img src='./assets/images/image 2.png' alt=""/>
-                </div>
-                <h1>ZapRecall</h1>
-            </div>
-            <div className='questions'>
-                {renderQuestions}
-            </div>
-        </div>
-    )
-}; 

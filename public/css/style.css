@@ -90,8 +90,7 @@ body{
 
 .open-page {
     width: 100%;
-    margin: auto;
-    margin-top: 300px;
+    height: 100vh;
     font-family: 'Righteous';
     font-size: 80px;
     font-weight: 400;
@@ -231,9 +230,8 @@ body{
     }
 
     .open-page {
-        width: 80%;
+        height: 100vh;
         font-size: 36px;
-        margin-top: 50vw;
     }
 
     .footer{
