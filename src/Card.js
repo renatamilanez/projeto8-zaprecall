@@ -1,7 +1,7 @@
 import React from "react";
-import OpenCard from "./OpenCard"
+import OpenCard from "./OpenCard";
 
-export default function Card(){
+export default function Card({counter, setCounter}){
     const deck = [
         {
             title: 'O que é JSX?',
@@ -49,7 +49,7 @@ export default function Card(){
         <div className='questions'>
             {questions.map((question, index) => {
                 return (
-                    <OpenCard question={question} index={index}/>
+                    <OpenCard counter={counter} setCounter={setCounter} key={index} question={question} index={index}/>
                 )})}
         </div>
     )

@@ -1,10 +1,13 @@
+import React from "react";
+import FooterIcons from "./FooterIcons";
 
+export default function Footer({counter}){
 
-export default function Footer(){
     return (
         <div className="footer">
             <div>
-                <p>0/4 CONCLUÍDOS</p>
+                <p>{counter}/8 CONCLUÍDOS</p>
+                <FooterIcons/>
             </div>
         </div>
     )

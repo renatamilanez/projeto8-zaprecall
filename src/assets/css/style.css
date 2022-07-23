@@ -23,9 +23,9 @@ body{
 .logo {
     width: 525px;
     height: 120px;
-    margin-top: 100px;
+    margin-top: 64px;
     font-family: 'Righteous';
-    font-size: 64px;
+    font-size: 80px;
     font-weight: 400;
     color: #ffffff;
     display: flex;
@@ -43,7 +43,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-top: 100px;
+    margin-top: 64px;
 }
 
 .closed-question {
@@ -184,15 +184,20 @@ body{
     border: 1px solid #2fbe34;
 }
 
-.closed-question ion-icon[name='close-circle']{
+.footer-icon ion-icon{
+    margin-top: 12px;
+    font-size: 50px;
+}
+
+ion-icon[name='close-circle']{
     color: #ff3030;
 }
 
-.closed-question ion-icon[name='help-circle']{
+ion-icon[name='help-circle']{
     color: #ff922e;
 }
 
-.closed-question ion-icon[name='checkmark-circle']{
+ion-icon[name='checkmark-circle']{
     color: #2fbe34;
 }
 

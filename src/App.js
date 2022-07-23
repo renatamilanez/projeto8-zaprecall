@@ -1,5 +1,5 @@
-import "./assets/css/reset.css"
-import "./assets/css/style.css"
+import "./assets/css/reset.css";
+import "./assets/css/style.css";
 import FirstPage from "./FirstPage";
 import React from "react";
 import logo from './assets/images/logo.png';

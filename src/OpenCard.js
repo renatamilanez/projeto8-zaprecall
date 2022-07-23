@@ -1,7 +1,7 @@
 import React from "react";
 import FlipCard from "./FlipCard";
 
-export default function OpenCard({index, question, setLogged}){
+export default function OpenCard({index, question, setLogged, counter, setCounter}){
     const [cards, setCards] = React.useState('closed');
 
     if(cards === 'closed'){
@@ -13,7 +13,7 @@ export default function OpenCard({index, question, setLogged}){
         )
     } if(cards === 'open'){
         return (
-            <FlipCard index={index} question={question} setLogged={setLogged} setCards={setCards}/>
+            <FlipCard index={index} question={question} setLogged={setLogged} setCards={setCards} counter={counter} setCounter={setCounter}/>
         )
     } if(cards === 'positive'){
         return (
