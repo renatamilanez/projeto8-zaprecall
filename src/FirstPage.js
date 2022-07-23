@@ -1,11 +1,11 @@
 import React from "react";
 import Footer from "./Footer";
-import ListCards from "./ListCards";
+import StartDeck from "./StartDeck";
 
 export default function FirstPage(){
     return (
         <div>
-            <ListCards />
+            <StartDeck />
             <Footer />
         </div>
     )

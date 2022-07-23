@@ -1,59 +1,40 @@
 import React from "react";
+import FlipCard from "./FlipCard";
 
-const deck = [
-    {
-        title: 'O que é JSX?',
-        answer: 'Uma extensão da linguagem do JavaScript'
-    },
-    {
-        title: 'O React é...',
-        answer: 'uma biblioteca de linguagem do JavaScript'
-    },
-    {
-        title: 'Componentes devem iniciar com...',
-        answer: 'letra maiúscula'
-    },
-    {
-        title: 'O ReactDOM nos ajuda...',
-        answer: 'interagindo com a DOM para colocar componentes React na mesma'
-    },
-    {
-        title: 'Podemos colocar...',
-        answer: 'expressões'
-    },
-    {
-        title: 'Usamos o npm para...',
-        answer: 'gerenciar os pacotes necessários e suas dependências'
-    },
-    {
-        title: 'Usamos props para...',
-        answer: 'passar diferentes informações para componentes'
-    },
-    {
-        title: 'Usamos estado (state) para...',
-        answer: 'dizer para o React quais informações quando atualizadas devem renderizar a tela novamente'
-    },
-];
+export default function OpenCard({index, question, setLogged}){
+    const [cards, setCards] = React.useState('closed');
 
-let newDeck = [...deck];
-function suffledDeck(){
-    newDeck.sort(() => Math.random() - 0.5)
-    for(let i=0; i < newDeck.length; i++){
-        newDeck.pop()
-    }
-}
-suffledDeck();
-
-
-export default function OpenCard(){
-    newDeck.map((question, index) => {
+    if(cards === 'closed'){
         return (
-            <>
-                <div className='closed-question'>
-                    <p className='title-question'>Pergunta {index+1}</p>
-                    <ion-icon name="play-outline"></ion-icon>
-                </div>
-            </>
+            <div key={index} className='closed-question'>
+                <p className='title-question'>Pergunta {index+1}</p>
+                <ion-icon name="play-outline" onClick={() => setCards('open')}></ion-icon>
+            </div>
         )
-    });
+    } if(cards === 'open'){
+        return (
+            <FlipCard index={index} question={question} setLogged={setLogged} setCards={setCards}/>
+        )
+    } if(cards === 'positive'){
+        return (
+            <div key={index} className='closed-question'>
+                <p className='title-question positive'>Pergunta {index+1}</p>
+                <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+        )
+    } if(cards === 'negative'){
+        return (
+            <div key={index} className='closed-question'>
+                <p className='title-question negative'>Pergunta {index+1}</p>
+                <ion-icon name="close-circle"></ion-icon>
+            </div>
+        )
+    } if(cards === 'neutral'){
+        return (
+            <div key={index} className='closed-question'>
+                <p className='title-question neutral'>Pergunta {index+1}</p>
+                <ion-icon name="help-circle"></ion-icon>
+            </div>
+        )
+    }
 }
