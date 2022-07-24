@@ -1,7 +1,7 @@
 import React from "react";
 import FlipCard from "./FlipCard";
 
-export default function OpenCard({index, question, setLogged, counter, setCounter}){
+export default function OpenCard({index, question, setLogged, counter, setCounter, iconAnswer, setIconAnswer, listIcons}){
     const [cards, setCards] = React.useState('closed');
 
     if(cards === 'closed'){
@@ -13,9 +13,11 @@ export default function OpenCard({index, question, setLogged, counter, setCounte
         )
     } if(cards === 'open'){
         return (
-            <FlipCard index={index} question={question} setLogged={setLogged} setCards={setCards} counter={counter} setCounter={setCounter}/>
+            <FlipCard index={index} question={question} setLogged={setLogged} setCards={setCards} counter={counter} setCounter={setCounter} iconAnswer={iconAnswer} setIconAnswer={setIconAnswer}/>
         )
     } if(cards === 'positive'){
+        listIcons.push('checkmark-circle');
+        setIconAnswer(true);
         return (
             <div key={index} className='closed-question'>
                 <p className='title-question positive'>Pergunta {index+1}</p>
@@ -23,6 +25,8 @@ export default function OpenCard({index, question, setLogged, counter, setCounte
             </div>
         )
     } if(cards === 'negative'){
+        listIcons.push('close-circle');
+        setIconAnswer(true);
         return (
             <div key={index} className='closed-question'>
                 <p className='title-question negative'>Pergunta {index+1}</p>
@@ -30,6 +34,8 @@ export default function OpenCard({index, question, setLogged, counter, setCounte
             </div>
         )
     } if(cards === 'neutral'){
+        listIcons.push('help-circle');
+        setIconAnswer(true);
         return (
             <div key={index} className='closed-question'>
                 <p className='title-question neutral'>Pergunta {index+1}</p>

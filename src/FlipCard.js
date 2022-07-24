@@ -10,7 +10,7 @@ export default function FlipCard({index, question, setCards, counter, setCounter
 
     function clickedAnswer(buttonName){
         if (buttonName === 'negative'){
-            setCards('negative')
+            setCards('negative');
         } if (buttonName === 'neutral'){
             setCards('neutral')
         } if (buttonName === 'positive'){
