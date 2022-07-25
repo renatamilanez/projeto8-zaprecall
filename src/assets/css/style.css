@@ -216,6 +216,30 @@ ion-icon[name='checkmark-circle']{
     color: #2fbe34;
     text-decoration: line-through;
 }
+.final-msg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.footer p{
+    margin-bottom: 10px;
+}
+
+.footer-button button {
+    width: 400px;
+    height: 80px;
+    background-color: #FB6B6B;
+    border: 1px solid #FB6B6B;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 28px;
+    color: #ffffff;
+    margin-top: 12px;
+}
 
 @media (max-width: 600px){
     .questions{
@@ -233,7 +257,7 @@ ion-icon[name='checkmark-circle']{
     }
 
     .closed-question ion-icon{
-        width: 20px;
+        width: 24px;
     }
 
     .open-page {
@@ -308,5 +332,17 @@ ion-icon[name='checkmark-circle']{
         width: 30%;
         height: 55px;
         font-size: 14px;
+    }
+
+    .footer-icon > ion-icon{
+        font-size: 30px;
+        margin-top: 5px;
+    }
+
+    .footer-button button {
+        width: 167px;
+        height: 32px;
+        font-size: 14px;
+        margin-top: 5px;
     }
 }

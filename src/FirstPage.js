@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./Footer";
 import StartDeck from "./StartDeck";
 
-export default function FirstPage(){
+export default function FirstPage({logged, setLogged}){
     const [counter, setCounter] = React.useState(0);
     const [iconAnswer, setIconAnswer] = React.useState(false);
 
@@ -71,7 +71,7 @@ export default function FirstPage(){
     return (
         <div>
             <StartDeck listIcons={listIcons} counter={counter} setCounter={setCounter} iconAnswer={iconAnswer} setIconAnswer={setIconAnswer} questions={questions}/>
-            <Footer listIcons={listIcons} counter={counter} setCounter={setCounter} iconAnswer={iconAnswer} setIconAnswer={setIconAnswer} questions={questions}/>
+            <Footer listIcons={listIcons} counter={counter} setCounter={setCounter} iconAnswer={iconAnswer} questions={questions} logged={logged} setLogged={setLogged}/>
         </div>
     )
 };

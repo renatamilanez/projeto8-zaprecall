@@ -15,7 +15,7 @@ export default function App() {
                     <h1>ZapRecall</h1>
                     <button onClick={() => setLogged(!logged)}>Iniciar Recall!</button>
                 </div>
-            ): <FirstPage />}
+            ): <FirstPage logged={logged} setLogged={setLogged}/>}
         </div>
     )
 };

@@ -1,8 +1,6 @@
 import React from "react";
 
- export default function FooterIcons({setIconAnswer, iconAnswer, listIcons}){
-    const icons = [...listIcons];
-    console.log(icons);
+ export default function FooterIcons({iconAnswer, icons}){
     
     if(iconAnswer === true){
         return(
