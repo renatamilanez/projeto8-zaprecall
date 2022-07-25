@@ -146,6 +146,7 @@ body{
 
 .open-question img{
     position: absolute;
+    width: 50px;
     bottom: 20px;
     right: 20px;
 }
@@ -344,5 +345,9 @@ ion-icon[name='checkmark-circle']{
         height: 32px;
         font-size: 14px;
         margin-top: 5px;
+    }
+
+    .open-question img{
+        width: 30px;
     }
 }
